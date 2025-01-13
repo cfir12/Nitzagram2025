@@ -16,6 +16,12 @@ class Post:
         self.comments = []
         self.comments_display_index = 0
 
+    def add_like(self):
+        self.counter_likes += 1
+
+    def add_comment(self, text):
+        self.comments.append(text)
+
     def display(self):
         """
         Display the Post image/Text, description, location, likes and comments
