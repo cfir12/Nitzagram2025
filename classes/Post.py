@@ -1,7 +1,10 @@
 import pygame
-
+from helpers import *
 from constants import *
 from helpers import screen
+
+
+screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.RESIZABLE)
 
 
 class Post:
@@ -31,6 +34,10 @@ class Post:
         """
 
         pass
+
+    def display_likes(self):
+
+        screen.blit(self.counter_likes, (LIKE_BUTTON_X_POS, LIKE_BUTTON_Y_POS))
 
     def display_comments(self):
         """
