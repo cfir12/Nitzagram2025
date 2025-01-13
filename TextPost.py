@@ -23,5 +23,6 @@ class TextPost(Post):
 
     def display(self):
         super().display()
-
+        self.displat_text_background()
+        self.display_text()
 
