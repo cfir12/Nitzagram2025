@@ -6,7 +6,7 @@ like_button = Button(LIKE_BUTTON_X_POS,
                      LIKE_BUTTON_Y_POS,
                      LIKE_BUTTON_WIDTH,
                      LIKE_BUTTON_HEIGHT)
-comment_button = Button(COMMENT_BUTTON_X_POST,
+comment_button = Button(COMMENT_BUTTON_X_POS,
                         COMMENT_BUTTON_Y_POS,
                         COMMENT_BUTTON_WIDTH,
                         COMMENT_BUTTON_HEIGHT)

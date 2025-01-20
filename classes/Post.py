@@ -1,4 +1,6 @@
 import pygame
+
+from classes.comments import Comment
 from helpers import *
 from constants import *
 from helpers import screen
@@ -12,25 +14,35 @@ class Post:
         self.counter_likes = 0
         self.comments = []
         self.comments_display_index = 0
+        self.text_color = (0, 0, 0)
 
     def add_like(self):
         self.counter_likes += 1
 
     def add_comment(self, text):
-        self.comments.append(text)
+        comment = Comment(text)
+        self.comments.append(comment)
 
     def display_location(self):
-        screen.blit(self.location, (LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS))
+        font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
+        location_text = font.render(self.location, True, self.text_color)
+        screen.blit(location_text, (LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS))
 
     def display_likes(self):
-        screen.blit(self.counter_likes, (LIKE_BUTTON_X_POS, LIKE_BUTTON_Y_POS))
+        font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
+        liked_by_text = f"Liked by: {self.counter_likes}"
+        likes_text = font.render(liked_by_text, True, self.text_color)
+        screen.blit(likes_text, (LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS))
 
     def display_username(self):
-        screen.blit(self.username, (USER_NAME_X_POS, USER_NAME_Y_POS))
-        להוסיף פונטים#
+        font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
+        username_text = font.render(self.username, True, self.text_color)
+        screen.blit(username_text, (USER_NAME_X_POS, USER_NAME_Y_POS))
 
     def display_description(self):
-        screen.blit(self.description, (DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS))
+        font = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE)
+        description_text = font.render(self.description, True, self.text_color)
+        screen.blit(description_text, (DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS))
 
     def display_comments(self):
         """
