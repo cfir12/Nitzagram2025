@@ -4,13 +4,7 @@ from constants import *
 from helpers import screen
 
 
-screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.RESIZABLE)
-
-
 class Post:
-    """
-    A class used to represent post on Nitzagram
-    """
     def __init__(self, username, location, description):
         self.username = username
         self.location = location
@@ -25,19 +19,18 @@ class Post:
     def add_comment(self, text):
         self.comments.append(text)
 
-    def display(self):
-        """
-        Display the Post image/Text, description, location, likes and comments
-        on screen
-
-        :return: None
-        """
-
-        pass
+    def display_location(self):
+        screen.blit(self.location, (LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS))
 
     def display_likes(self):
-
         screen.blit(self.counter_likes, (LIKE_BUTTON_X_POS, LIKE_BUTTON_Y_POS))
+
+    def display_username(self):
+        screen.blit(self.username, (USER_NAME_X_POS, USER_NAME_Y_POS))
+        להוסיף פונטים#
+
+    def display_description(self):
+        screen.blit(self.description, (DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS))
 
     def display_comments(self):
         """
@@ -64,3 +57,12 @@ class Post:
             position_index += 1
             if i >= NUM_OF_COMMENTS_TO_DISPLAY - 1:
                 break
+
+    def display(self):
+        self.display_likes()
+        self.display_comments()
+        self.display_username()
+        self.display_location()
+        self.display_description()
+
+

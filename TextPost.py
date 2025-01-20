@@ -2,7 +2,6 @@ import pygame
 from classes import Post
 from constants import *
 from helpers import *
-
 from classes import Post
 
 
@@ -25,4 +24,5 @@ class TextPost(Post):
         super().display()
         self.displat_text_background()
         self.display_text()
+
 
