@@ -20,6 +20,7 @@ def main():
     background = pygame.image.load('Images/background.png')
     background = pygame.transform.scale(background,
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
+    # posts
     username = "noa"
     post_ronaldo = ImagePost(username, "portugal", "gdxfcgh",'Images/ronaldo.jpg')
     post_noakirel = ImagePost(username, "israel", "singing",'Images/noa_kirel.jpg')
@@ -34,13 +35,16 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pos = event.pos
+                # click on likes button
                 if mouse_in_button(like_button, pos):
                     list_posts[current_post].add_like()
+                # click on the post
                 if mouse_in_button(click_post_button, pos):
                     if current_post < 2:
                         current_post += 1
                     else:
                         current_post = 0
+                # click on comments buttom
                 if mouse_in_button(comment_button, pos):
                     comment = read_comment_from_user()
                     list_posts[current_post].add_comment(comment)
