@@ -59,13 +59,7 @@ nitzagram
 - **Navigate**: Use the `Next Post` button to cycle through posts
 - **Like**: Click the `Like` button to increment the like counter
 - **Comment**: Use the `Comment` button to add comments to the current post
-
-## Future Roadmap 🎯
-- User authentication system 🔐
-- Video post support 🎥
-- Persistent storage for user interactions 💾
-- Enhanced social features (sharing, tagging) 🤝
-
+- 
 ## Contributing 🤝
 Contributions are welcome! Feel free to submit issues and pull requests.
 
